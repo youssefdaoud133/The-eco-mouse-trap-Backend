@@ -42,7 +42,7 @@ const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 const chatWithGemini = async (message) => {
     try {
         const result = await model.generateContent([
-            `If the message is related to greenhouse gases, please provide an answer; if not, return 'Sorry, I can only answer questions about greenhouse gases message: ${message}'`
+            `If the message is related to greenhouse gases or any thing related to gases places climate that have gases, please provide an answer; if not, return 'Sorry, I can only answer questions about greenhouse gases message: ${message}'`
         ]);
         return result.response.text();
     } catch (error) {

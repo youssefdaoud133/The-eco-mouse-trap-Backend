@@ -4,11 +4,13 @@ const express = require('express');
 // const connectDB = require('./config/db');
 // const postRoutes = require('./routes/postRoutes');
 const geminiRoutes = require('./routes/geminiRoutes'); // Import gemini routes
+const cors = require('cors');  // Import the cors package
 
 // dotenv.config();
 // connectDB(); // Connect to MongoDB
 
 const app = express();
+app.use(cors()); // This will enable CORS for all routes
 app.use(express.json()); // Parse JSON request bodies
 
 // // Use the post routes
