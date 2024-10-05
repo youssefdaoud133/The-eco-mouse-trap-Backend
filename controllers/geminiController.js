@@ -50,7 +50,19 @@ const chatWithGemini = async (message) => {
         throw new Error('An error occurred while communicating with the Gemini API');
     }
 };
+const solveWithGemini = async (message) => {
+    try {
+        const result = await model.generateContent([
+            `${message }' in three lines and add links to this companies`
+        ]);
+        return result.response.text();
+    } catch (error) {
+        console.error('Error:', error);
+        throw new Error('An error occurred while communicating with the Gemini API');
+    }
+};
 
 module.exports = {
     chatWithGemini,
+    solveWithGemini
 };
